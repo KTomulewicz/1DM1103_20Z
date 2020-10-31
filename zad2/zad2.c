@@ -16,8 +16,9 @@ int wczyt (FILE *fin, float t[][200])
 
     if ((a = fscanf(fin, "%d" "%d", &w, &k)) != 2)
     {
+        //musi byc 2 zeby bylo wiadomo ze ilosc kolumn i wierszy wpisala sie poprawnie
         printf ("Rozmiar macierzy nie zgadza się!"
-                " Liczba prawidłowo zinterpretowanych argumentów: %d\n", a);
+                " Liczba wpisanych argumentów: %d\n", a);
         exit(-1);
 
         // wczytuje wymiary macierzy i wektora jednoczesnie sprawdzajac czy sa one liczba calkowita czy jakims napisem
@@ -44,17 +45,16 @@ int wczyt (FILE *fin, float t[][200])
 
 
 
-void mnozenie ( int wierszw, int wierszm, float macierz[][200], float wektor[][200])
+void mnozenie ( int wierszwektor, int wierszmacierz, float wektor[][200], float macierz[][200])
 {
     int kw=0; // bedzie to kolumna wektora
     float iloczyn=0; // wynik mnożenia macierzy i wektora
 
-    for (int i=0; i < wierszm; i++)
+    for (int i=0; i < wierszmacierz; i++)
     {
         //jestesmy w macierzy np. w pierwszym wierszu i musimy sprawdzic kolejne wiersze wektora
-        for (int j=0; j < wierszw; j++)
+        for (int j=0; j < wierszwektor; j++)
         {
-            
             //teraz mnozymy caly wiersz macierzy skaczac po kolumnach 
 
             iloczyn = iloczyn + macierz[i][j] * wektor[j][kw];  
@@ -62,9 +62,9 @@ void mnozenie ( int wierszw, int wierszm, float macierz[][200], float wektor[][2
         }
         printf ("%1.1f ", iloczyn);
         iloczyn=0;
-    }
-        
+    }   
 }
+
 
 int main(int argc, char *argv[])
 {
@@ -72,19 +72,19 @@ int main(int argc, char *argv[])
     FILE *fin1;
     FILE *fin2;
 
-    int wierszm, wierszw;
+    int wierszmacierz, wierszwektor;
 
     float m[200][200], we[200][200];
 
-    wierszm = wczyt(fopen (argv[1], "r"), m);
-    wierszw = wczyt(fopen (argv[2], "r"), we);
+    wierszmacierz = wczyt(fopen (argv[1], "r"), m);
+    wierszwektor = wczyt(fopen (argv[2], "r"), we);
     // wczytywanie plikow tekstowych
 
     
-    printf ("(%d) ", wierszm);
+    printf ("(%d) ", wierszmacierz);
     printf ("[");
     
-    mnozenie(wierszw, wierszm, m, we);
+    mnozenie(wierszwektor, wierszmacierz, we, m);
     // mnozenie macierzy i wektora
     printf ("]");
 
