@@ -37,7 +37,9 @@ int wczyt (FILE *fin, float t[][200])
                 // tutaj jestem w macierzy lub wektorze i sprawdzam czy w pojedynczych komorkach mam liczby czy tekst
                 // jesli jest napis to konczy program i wypisuje mi blad 
             }
+
             t[i][j]=liczba;
+            // przypisanie liczb do macierzy
         }
     }
     return w;
