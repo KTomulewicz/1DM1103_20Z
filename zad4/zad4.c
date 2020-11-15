@@ -1,8 +1,3 @@
-/**
-Mamy mini bazÄ™ studentĂłw (tabelÄ™ z studentami, przedmiotami i ocenami)
-Cel: obliczyÄ‡ ranking.
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
