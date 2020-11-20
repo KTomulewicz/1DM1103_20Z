@@ -18,13 +18,9 @@ int main(int argc, char ** argv)
         najlepszy_student(dane, ile);
     } 
 
-    else if ( strcmp( argv[1], "najlepszy_przedmiot") == 0) 
+    else if ( strcmp( argv[1], "przedmiot") == 0) 
     {
         najlepszy_przedmiot(dane, ile);
-    } 
-
-    else if ( strcmp( argv[1], "najgorszy_przedmiot") == 0) 
-    {
         najgorszy_przedmiot(dane, ile);
     } 
     

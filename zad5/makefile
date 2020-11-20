@@ -7,7 +7,7 @@
 
 # po wpisaniu make program odpala pierwsza regule po DEPSie
 
-DEPS=main.c studenci.c dziekanat.c 
+DEPS=main.o studenci.o dziekanat.o
 
 # p7_3: $(DEPS) - odwoluje sie do depsa
 
@@ -32,5 +32,5 @@ clean:
 	rm -f main
 	rm -f *.o
 
-#test: main
-#	./main studenci.txt "najlepszy_przedmiot"
+test: main
+	./main "przedmiot"
