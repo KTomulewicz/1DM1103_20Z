@@ -1,3 +1,6 @@
+#ifndef _studenci_h
+#define _studenci_h
+
 typedef struct _student
 {
     char imie[25];
@@ -10,7 +13,7 @@ typedef struct _student
 
 } student, *pstudent;
 
-int wczytaj(student dane[100], char *fnazwa);
+int wczytaj(student dane[100]);
 
 void wypisz (student dane[100], int n);
 
@@ -21,3 +24,5 @@ int znajdz_studentow (char nr_albumow[100][10], student dane[100], int n);
 int znajdzp(char *szukany_nr, char kod_przed[100][10], int n);
 
 int znajdz_przedmioty(char kod_przed[100][10], student dane[100], int n);
+
+#endif

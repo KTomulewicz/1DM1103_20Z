@@ -7,7 +7,7 @@
 
 # po wpisaniu make program odpala pierwsza regule po DEPSie
 
-DEPS=main.c studenci.c dziekanat.c studenci.h dziekanat.h
+DEPS=main.c studenci.c dziekanat.c 
 
 # p7_3: $(DEPS) - odwoluje sie do depsa
 

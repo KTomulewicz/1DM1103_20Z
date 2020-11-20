@@ -1,13 +1,12 @@
-#include "studenci.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "studenci.h"
 
 void najlepszy_student (student dane[100], int ile_rekordow) 
 {
     char nr_albumow[100][10];
 
-    float srednie[100];
     float sumy_wazonych_ocen[100] = {0};
     float najlepsza = 0.0f;
 

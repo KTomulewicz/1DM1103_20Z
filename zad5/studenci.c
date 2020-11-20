@@ -14,10 +14,10 @@ typedef struct _student
 
 } student, *pstudent;
 
-int wczytaj(student dane[100], char *fnazwa) 
+int wczytaj(student dane[100]) 
 
 {
-    FILE * fin = fopen(fnazwa, "r");
+    FILE * fin = fopen("studenci.txt", "r");
     int cnt;
     char bufor[1024];
     char *w;
