@@ -24,11 +24,11 @@ void najlepszy_student (student dane[100], int ile_rekordow)
         sumy_ects[pozycja] += dane[i].ects;
     }    
 
-    for (int i=0; i < ile_studentow; i++) 
+    /*for (int i=0; i < ile_studentow; i++) 
     {
         printf("Student [%d]: %s - %f:%d - %f \n", i+1, nr_albumow[i], sumy_wazonych_ocen[i], sumy_ects[i], sumy_wazonych_ocen[i] / sumy_ects[i]);
 
-    }
+    }*/
 
     for (int i=0; i < ile_studentow; i++) 
     {

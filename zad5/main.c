@@ -14,7 +14,7 @@ int main(int argc, char ** argv)
 
     if ( strcmp( argv[1], "najlepszy_student") == 0) 
     {
-        wypisz(dane, ile);
+        //wypisz(dane, ile);
         najlepszy_student(dane, ile);
     } 
 
