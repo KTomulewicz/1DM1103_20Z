@@ -1,27 +1,29 @@
+DEPS=main.o baza.o 
 
+mydb: $(DEPS)
+	cc $(DEPS) -o $@ -Wall --pedantic 
 
-all:
-	cc baza.c main.c -o mydb -Wall --pedantic
+%.o:%.c
+	cc -c $^ -o $@
 
-test: all
-	./mydb baza.csv list_students
+clean:
+	rm -f main
+	rm -f *.o
 
-test-dodajs: all
-	./mydb baza.csv add_student Zuza Mroz 2120 zuzmroz@wp.pl
+test: 
+	valgrind ./mydb baza.csv list_students
 
-test-dodajp: all
-	./mydb baza.csv add_przedmiot 1DM1103 Programowanie 2020Z
+test-licznik: 
+	./mydb baza.csv count_students
 
-test-dodajsp: all
-	./mydb baza.csv add_student_to_course 1DM1103 949827
+test-memory: 
+	 valgrind ./mydb baza.csv count_students 
 
-test-zlicz: all
-	./mydb baza.csv count_students	
+test-dodajs: 
+	 ./mydb baza.csv add_student Zuzanna Mroz 2120 mroz@wp.pl
 
-test-memory: all
-	valgrind ./mydb baza.csv count_students
+test-dodajp: 
+	 ./mydb baza.csv add_subject 11024 Fizyka 2020Z
 
-
-
-#student - imie nazwisko nr albumu email
-
+test-dodajsp: 
+	 ./mydb baza.csv add_student_to_course 1D324 2120

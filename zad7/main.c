@@ -18,7 +18,7 @@ int main(int argc, char ** argv)
         dodaj_studentow (baza, argv[3], argv[4], argv[5], argv[6]);
     } 
 
-    else if (strcmp("add_przedmiot", argv[2]) == 0) 
+    else if (strcmp("add_subject", argv[2]) == 0) 
     {
         dodaj_przedmiot (baza, argv[3], argv[4], argv[5]);
     } 

@@ -43,21 +43,13 @@ typedef struct _SBaza
 
 } SBaza;
 
-SBaza * wczytaj_baze(char *nazwa); 
-
-SBaza * zapisz_baze(char *nazwa, SBaza * baza); 
-
 Student * wczytaj_studentow(FILE *fin);
 
 Przedmiot * wczytaj_przedmioty(FILE *fin); 
 
 Ocena * wczytaj_oceny(FILE *fin); 
 
-SBaza * dodaj_studentow (SBaza *baza, char *imie, char *nazwisko, char *nr_albumu, char *email);
-
-void dodaj_przedmiot (SBaza *baza, char *kod_przed, char *nazwa_przed, char *sem);
-
-SBaza * dodaj_oceny (SBaza *baza, char *kod_przed, char *nr_albumu);
+SBaza * wczytaj_baze(char *nazwa); 
 
 int ile_studentow(SBaza *baza); 
 
@@ -65,7 +57,19 @@ int ile_przedmiotow(SBaza *baza);
 
 int ile_ocen (SBaza *baza);
 
+void zapisz_baze(char *nazwa, SBaza * baza); 
+
+void dodaj_studentow (SBaza *baza, char *imie, char *nazwisko, char *nr_albumu, char *email);
+
+void dodaj_przedmiot (SBaza *baza, char *kod_przed, char *nazwa_przed, char *sem);
+
+void dodaj_oceny (SBaza *baza, char *kod_przed, char *nr_albumu);
+
 void listuj_studentow(SBaza *baza); 
+
+void listuj_przedmiot(SBaza *baza);
+
+void listuj_oceny(SBaza *baza);
 
 void zwolnij_student(Student *s);
 
