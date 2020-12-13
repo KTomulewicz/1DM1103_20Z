@@ -743,7 +743,7 @@ void dodaj_przedmiot (SBaza *baza, char *kod_przed, char *nazwa_przed, char *sem
 void dodaj_oceny(SBaza *baza, char *kod_przed, char *nr_albumu, char *ocena, char *komentarz)
 {
     Ocena *nowy=(Ocena*) malloc(sizeof(Ocena));
-    Ocena *obecny=NULL;
+    Ocena *aktualnie=NULL;
 
     nowy->nast=NULL;
 
@@ -759,7 +759,7 @@ void dodaj_oceny(SBaza *baza, char *kod_przed, char *nr_albumu, char *ocena, cha
     nowy->komentarz = (char*) malloc( sizeof(char) * (strlen(komentarz) + 1));
     strcpy(nowy->komentarz, komentarz);
 
-    obecny=baza->lista_ocen;
+    aktualnie=baza->lista_ocen;
 
     if(ile_ocen(baza)==0)
     {
@@ -771,9 +771,9 @@ void dodaj_oceny(SBaza *baza, char *kod_przed, char *nr_albumu, char *ocena, cha
     {
         for(int i=1;i<ile_ocen(baza);i++)
         {
-            obecny=obecny->nast;
+            aktualnie=aktualnie->nast;
         }
-        obecny->nast=nowy;
+        aktualnie->nast=nowy;
     }    
     
 }

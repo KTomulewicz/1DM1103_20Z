@@ -31,7 +31,7 @@ test-dodajp:
 #działa
 
 test-dodajo: 
-	 ./mydb baza.csv add_ocena 1D324 2121 5 super
+	 ./mydb baza.csv add_ocena 1D3143 2121 5 super
 #działa
 
 test-sortuj-rosnaco-student-nazwisko:
@@ -62,5 +62,5 @@ test-szukaj-po-przedmiot:
 	./mydb baza.csv szukaj_po_przedmiot 1D324
 #dziala
 test-szukaj-oceny-po-albumie:
-	./mydb baza.csv szukaj_oceny_po_albumie 2120
+	./mydb baza.csv szukaj_oceny_po_albumie 2121
 #dziala
