@@ -57,6 +57,7 @@ void listuj_studentow_od_konca(SBaza *b)
     }
 }
 
+/*
 void oceny_po_nazwie(SBaza *baza, char *kod_przed)
 {   
     Ocena *teraz;
@@ -104,6 +105,116 @@ void oceny_po_numerze_albumu(SBaza *baza, char *nr_albumu)
    
     
 }
+*/
+
+Ocena *ostatnia (Ocena *glowa)
+{
+    if(glowa!=NULL)
+    {
+        while(glowa->nast !=NULL)
+        {
+            glowa=glowa->nast;
+        }
+        return glowa;
+    }
+    else
+    {
+        return NULL;
+    }
+}
+
+Ocena * filtrowanie_po_kodzie (Ocena *glowa, char * kod, SBaza *baza)
+{
+    Ocena *a=NULL;
+    Ocena *b=NULL;
+
+    for (int i=0; i<ile_ocen(baza); i++)
+    {
+        //printf ("okej\n");
+        if(strcmp(glowa->kod_przed, kod)==0)
+        {
+
+        Ocena *glowa2;
+        glowa2=(Ocena*) malloc(sizeof(Ocena));
+
+        glowa2->nast=NULL;
+        glowa2->poprz=NULL;
+        
+            if(a == NULL)
+            {
+                a = glowa2;
+            }
+            else
+            {
+                b=ostatnia(a);
+                ostatnia(a)->nast = glowa2;
+                glowa2->poprz = b;
+            }
+
+            glowa2->kod_przed=glowa->kod_przed;
+
+            glowa2->nr_albumu=glowa->nr_albumu;
+
+            glowa2->ocena=glowa->ocena;
+
+            glowa2->komentarz=glowa->komentarz;
+
+        
+        }
+        
+        glowa=glowa->nast;
+    }
+
+    return a;
+}
+
+
+
+Ocena * filtrowanie_po_albumie (Ocena *glowa, char * album, SBaza *baza)
+{
+    Ocena *a=NULL;
+    Ocena *b=NULL;
+
+    for (int i=0; i<ile_ocen(baza); i++)
+    {
+        //printf ("okej\n");
+        if(strcmp(glowa->nr_albumu, album)==0)
+        {
+
+        Ocena *glowa2;
+        glowa2=(Ocena*) malloc(sizeof(Ocena));
+
+        glowa2->nast=NULL;
+        glowa2->poprz=NULL;
+        
+            if(a == NULL)
+            {
+                a = glowa2;
+            }
+            else
+            {
+                b=ostatnia(a);
+                ostatnia(a)->nast = glowa2;
+                glowa2->poprz = b;
+            }
+
+            glowa2->kod_przed=glowa->kod_przed;
+
+            glowa2->nr_albumu=glowa->nr_albumu;
+
+            glowa2->ocena=glowa->ocena;
+
+            glowa2->komentarz=glowa->komentarz;
+
+        
+        }
+        
+        glowa=glowa->nast;
+    }
+
+    return a;
+}
+
 
 Student * usun_student(Student *glowa, Student *el) 
 {
@@ -669,7 +780,7 @@ void zapisz_baze(char *nazwa, SBaza *baza)
 
 }
 
-void dodaj_studentow (SBaza *baza, char *imie, char *nazwisko, char *nr_albumu, char *email)
+Student *dodaj_studentow (SBaza *baza, char *imie, char *nazwisko, char *nr_albumu, char *email)
 {
     Student *nowy = (Student*) malloc(sizeof(Student));
   	Student *aktualnie = NULL;
@@ -703,10 +814,12 @@ void dodaj_studentow (SBaza *baza, char *imie, char *nazwisko, char *nr_albumu, 
       }
       aktualnie->nast = nowy;
     }
+
+     return baza->lista_studentow;
         
 }
 
-void dodaj_przedmiot (SBaza *baza, char *kod_przed, char *nazwa_przed, char *sem)
+Przedmiot *dodaj_przedmiot (SBaza *baza, char *kod_przed, char *nazwa_przed, char *sem)
 {
     Przedmiot *nowy = (Przedmiot*) malloc(sizeof(Przedmiot));
 
@@ -738,9 +851,11 @@ void dodaj_przedmiot (SBaza *baza, char *kod_przed, char *nazwa_przed, char *sem
       }
       aktualnie->nast = nowy;
     }    
+
+    return baza->lista_przedmiotow;
 }
 
-void dodaj_oceny(SBaza *baza, char *kod_przed, char *nr_albumu, char *ocena, char *komentarz)
+Ocena *dodaj_oceny (SBaza *baza, char *kod_przed, char *nr_albumu, char *ocena, char *komentarz)
 {
     Ocena *nowy=(Ocena*) malloc(sizeof(Ocena));
     Ocena *aktualnie=NULL;
@@ -775,6 +890,8 @@ void dodaj_oceny(SBaza *baza, char *kod_przed, char *nr_albumu, char *ocena, cha
         }
         aktualnie->nast=nowy;
     }    
+
+    return baza->lista_ocen;
     
 }
 

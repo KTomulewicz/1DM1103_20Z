@@ -1,18 +1,21 @@
-8
-Bartek;Cieply;2121;bc@wp.pl
-Robert;Kowalski;123456;ala@ala.pl
-Karol;Los;123122;karolek@gmail.pl
-Jan;Młody;000027;brak@brak.pl
-Jan;Nowak;000017;bk@brak.pl
-Grzegorz;Schetyński;00000001;nie@nie.pl
+9
 Jan;Zych;000007;brk@brak.pl
+Hubert;Topor;6666;ost@22o.pl
 Kuba;Tomulewicz;110203;kt@wjw.pl
-3
-1DA1245;Algorithms and python;2020Z
-1DE2103;Numerical methods;2020Z
-1dm1104;matematyka;2020Z
+Grzegorz;Schetyński;00000001;nie@nie.pl
+Jan;Nowak;000017;bk@brak.pl
+Jan;Młody;000027;brak@brak.pl
+Karol;Los;123122;karolek@gmail.pl
+Robert;Kowalski;123456;ala@ala.pl
+Bartek;Cieply;2121;bc@wp.pl
 4
+1dm2132;wf;2020Z
+1dm1104;matematyka;2020Z
+1DE2103;Numerical methods;2020Z
+1DA1245;Algorithms and python;2020Z
+5
 1DA1245;000007;2;Beznadziejny projekt!
 1DA1245;00000001;3;Super!
 1D3143;2121;5;super
 1DE2103;00007;2;slabo
+1D6545;1111;1;slabo

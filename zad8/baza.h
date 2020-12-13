@@ -112,13 +112,11 @@ int ile_ocen (SBaza *baza);
 
 void zapisz_baze(char *nazwa, SBaza *baza);
 
-void dodaj_studentow (SBaza *baza, char *imie, char *nazwisko, char *nr_albumu, char *email);
+Student *dodaj_studentow (SBaza *baza, char *imie, char *nazwisko, char *nr_albumu, char *email);
 
-void dodaj_przedmiot (SBaza *baza, char *kod_przed, char *nazwa_przed, char *sem);
+Przedmiot *dodaj_przedmiot (SBaza *baza, char *kod_przed, char *nazwa_przed, char *sem);
 
-void dodaj_oceny (SBaza *baza, char *kod_przed, char *nr_albumu, char *ocena, char *komentarz);
-
-void dodaj_oceny_dla_studenta (SBaza *baza, char *kod_przed, char *nr_albumu, char *ocena, char *komentarz);
+Ocena *dodaj_oceny (SBaza *baza, char *kod_przed, char *nr_albumu, char *ocena, char *komentarz);
 
 void listuj_studentow(SBaza *baza);
 
@@ -139,5 +137,13 @@ void zwolnij_liste_przedmiotow(Przedmiot *s);
 void zwolnij_liste_ocen(Ocena *s);
 
 void zwolnij(SBaza *baza); 
+
+Ocena *ostatnia (Ocena *glowa);
+
+Ocena * filtrowanie_po_kodzie (Ocena *glowa, char * kod, SBaza *baza);
+
+void wypisz_oceny(Ocena *glowa);
+
+Ocena * filtrowanie_po_albumie(Ocena *glowa, char *album, SBaza *baza);
 
 #endif

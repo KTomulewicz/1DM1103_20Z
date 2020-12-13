@@ -58,9 +58,9 @@ test-sortuj-malejaco-przedmiot-nazwa:
 	./mydb baza.csv sortuj_malejaco_przedmiot_nazwa
 #działa - sortowanie od Z do A
 
-test-szukaj-po-przedmiot:
-	./mydb baza.csv szukaj_po_przedmiot 1D324
+test-szukaj-oceny-po-kodzie:
+	./mydb baza.csv szukaj_oceny_po_kodzie 1DA1245
 #dziala
 test-szukaj-oceny-po-albumie:
-	./mydb baza.csv szukaj_oceny_po_albumie 2121
+	./mydb baza.csv szukaj_oceny_po_albumie 000007
 #dziala
